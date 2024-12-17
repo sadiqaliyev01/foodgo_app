@@ -21,12 +21,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _navigateNext() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushAndRemoveUntil(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         ),
-        (route) => route.isFirst,
+        // (route) => route.isFirst,
       );
     });
   }
@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
           FadeInLeftBig(
             child: Padding(
               padding: const EdgeInsets.only(bottom: 260),
-              child: Center(child: SvgPicture.asset(AppAssets.foodgoLogo)),
+              child: Center(child: SvgPicture.asset(AppAssets.foodgoLogoWhite)),
             ),
           ),
           Row(
