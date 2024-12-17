@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodgo_app/presentation/screens/splash_screen/splash_screen.dart';
+import 'package:foodgo_app/utils/constants/app_colors.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        scaffoldBackgroundColor: AppColors.white
       ),
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
