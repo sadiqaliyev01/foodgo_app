@@ -6,6 +6,7 @@ import 'package:foodgo_app/data/models/local/product_categories.dart';
 import 'package:foodgo_app/presentation/screens/home_screen/widgets/category_buttons.dart';
 import 'package:foodgo_app/presentation/screens/home_screen/widgets/custom_product_card.dart';
 import 'package:foodgo_app/presentation/screens/home_screen/widgets/searcbar_and_filter_button.dart';
+import 'package:foodgo_app/presentation/screens/product_details_screen/product_details_screen.dart';
 import 'package:foodgo_app/utils/constants/app_assets.dart';
 import 'package:foodgo_app/utils/constants/app_colors.dart';
 
@@ -47,11 +48,21 @@ class HomeScreen extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) {
                   final product = products[index];
-                  return CustomProductCard(
-                    productImage: product.productImage,
-                    productName: product.productName,
-                    productDescription: product.productDescription,
-                    productRate: product.rate,
+                  return GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductDetailsScreen(
+                          product: product,
+                        ),
+                      ),
+                    ),
+                    child: CustomProductCard(
+                      productImage: product.productImage,
+                      productName: product.productName,
+                      productDescription: product.productDescription,
+                      productRate: product.rate,
+                    ),
                   );
                 },
               ),
